@@ -71,7 +71,7 @@ class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
     // Se o usuário ganhou, retorna a mensagem de sucesso com o fundo em verde
-    if (status = Status.ganhou) {
+    if (status == Status.ganhou) {
       return Container(
         color: Colors.green,
         child: const Text('Você ganhou'),
@@ -79,7 +79,7 @@ class _MyWidgetState extends State<MyWidget> {
     }
 
     // Se o usuário perdeu, retorna a mensagem de fracasso com o fundo em vermelho
-    if (status = Status.perdeu) {
+    if (status == Status.perdeu) {
       return Container(
         color: Colors.red,
         child: const Text('Você perdeu'),

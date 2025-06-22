@@ -12,17 +12,14 @@ class PreferencesScreen extends StatefulWidget {
 }
 
 class _PreferencesScreenState extends State<PreferencesScreen> {
-  Cores _appbarcolor = Cores.blue;
-  Cores _backgroundcolor = Cores.white;
-
   @override
   Widget build(BuildContext context) {
-    final colorState = Provider.of<ColorState>(context, listen: false);
+    final colorState = Provider.of<ColorState>(context);
     return Scaffold(
-      backgroundColor: colorState.backgroundColor,
+      backgroundColor: colorState.backgroundColor.color,
       appBar: AppBar(
         title: Text('Configurações'),
-        backgroundColor: colorState.appBarColor,
+        backgroundColor: colorState.appBarColor.color,
       ),
       body: Column(
         children: [
@@ -45,7 +42,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                     ),
                   ),
                   DropdownButton<Cores>(
-                    value: _appbarcolor,
+                    value: colorState.appBarColor,
                     hint: Text('Selecione uma cor'),
                     isExpanded: true,
                     items: Cores.values.map((e) => DropdownMenuItem(
@@ -61,9 +58,11 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                         ],
                       ),
                     )).toList(),
-                    onChanged: (value) => setState(() {
-                      _appbarcolor = value!;
-                    }),
+                    onChanged: (value) {
+                      if(value != null){
+                        colorState.changeColor(colorState.backgroundColor, value);
+                      }
+                    },
                   ),
                   Text(
                     'Cor de fundo',
@@ -72,7 +71,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                     ),
                   ),
                   DropdownButton<Cores>(
-                    value: _backgroundcolor,
+                    value: colorState.backgroundColor,
                     hint: Text('Selecione uma cor'),
                     isExpanded: true,
                     items: Cores.values.map((e) => DropdownMenuItem(
@@ -88,14 +87,44 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                         ],
                       ),
                       )).toList(),
-                    onChanged: (value) => setState(() {
-                      _backgroundcolor = value!;
-                    }),
+                    onChanged: (value) {
+                      if(value != null){
+                        colorState.changeColor(value, colorState.appBarColor);
+                      }
+                    },
+                  ),
+                  Text(
+                    'Cor de card',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                    ),
+                  ),
+                  DropdownButton<Cores>(
+                    value: colorState.cardColor,
+                    hint: Text('Selecione uma cor'),
+                    isExpanded: true,
+                    items: Cores.values.map((e) => DropdownMenuItem(
+                      value: e,
+                      child: Row(
+                        children: [
+                          Text(
+                            e.displayString,
+                            style: TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )).toList(),
+                    onChanged: (value) {
+                      if(value != null){
+                        colorState.changeCardColor(value);
+                      }
+                    },
                   ),
                   ElevatedButton(
                       onPressed: (){
-                        Navigator.pop(context);
-                        colorState.changeColor(_backgroundcolor.color, _appbarcolor.color);
+                        Navigator.pushNamed(context, '/');
                         },
                       child: Text('Atualizar'),
                   ),

@@ -1,3 +1,4 @@
+import 'package:ap1/ep_provider/models/color_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -23,10 +24,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
     final videoState = Provider.of<VideoState>(context, listen: false);
     final colorState = Provider.of<ColorState>(context, listen: false);
     return Scaffold(
-      backgroundColor: colorState.backgroundColor,
+      backgroundColor: colorState.backgroundColor.color,
       appBar: AppBar(
         title: Text('Registro'),
-        backgroundColor: colorState.appBarColor,
+        backgroundColor: colorState.appBarColor.color,
       ),
       body: Form(
         key: _formKey,

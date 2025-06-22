@@ -10,13 +10,14 @@ class VideoData{
   final String thumbnail;
   final String channelName;
   final String channelURL;
-  final List<String> hashtags = [];
+  final List<String> hashtags;
 
   VideoData({
     required this.title,
     required this.thumbnail,
     required this.channelName,
     required this.channelURL,
+    required this.hashtags,
   });
 
 

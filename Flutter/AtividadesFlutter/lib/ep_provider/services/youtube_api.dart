@@ -18,17 +18,18 @@ class FailedRequestException implements Exception {
 }
 
 class YouTubeAPI {
-  static Future<VideoData> fetchVideoData(String videoID, ) async {
+  static Future<Map<String, dynamic>> fetchVideoData(String videoID, ) async {
     final response = await http.get(Uri.parse('$_urlTemplate$videoID'));
     if (response.statusCode != 200) {
       throw FailedRequestException(videoID);
     }
     final decoded = jsonDecode(response.body);
-    return VideoData(
-      title: decoded['title'] ?? '',
-      thumbnail: decoded['thumbnail_url'] ?? '',
-      channelName: decoded['author_name'] ?? '',
-      channelURL: decoded['author_url'] ?? '',
-    );
+    return decoded;
+    // return VideoData(
+    //   title: decoded['title'] ?? '',
+    //   thumbnail: decoded['thumbnail_url'] ?? '',
+    //   channelName: decoded['author_name'] ?? '',
+    //   channelURL: decoded['author_url'] ?? '',
+    // );
   }
 }

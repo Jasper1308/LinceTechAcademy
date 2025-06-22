@@ -1,3 +1,4 @@
+import 'package:ap1/ep_provider/models/color_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -19,14 +20,15 @@ class _ListVideosState extends State<ListVideos> {
   Widget build(BuildContext context) {
     final colorState = Provider.of<ColorState>(context, listen: false);
     return Scaffold(
-      backgroundColor: colorState.backgroundColor,
+      backgroundColor: colorState.backgroundColor.color,
       appBar: AppBar(
-        backgroundColor: colorState.appBarColor,
+        automaticallyImplyLeading: false,
+        backgroundColor: colorState.appBarColor.color,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
-              onPressed: () => print('settings'),
+              onPressed: () => print('ola'),
               icon: Icon(Icons.search),
             ),
             SizedBox(height: 8,),

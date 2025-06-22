@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'color_enum.dart';
+
 class ColorState with ChangeNotifier{
-  static const String _backgroundColorKey = 'backgroundColor';
-  static const String _appBarColorKey = 'appBarColor';
+  Cores _backgroundColor = Cores.white;
+  Cores _appBarColor = Cores.blue;
+  Cores _cardColor = Cores.white;
 
-  Color _backgroundColor = Colors.white;
-  Color _appBarColor = Colors.blue;
+  Cores get backgroundColor => _backgroundColor;
+  Cores get appBarColor => _appBarColor;
+  Cores get cardColor => _cardColor;
 
-  Color get backgroundColor => _backgroundColor;
-  Color get appBarColor => _appBarColor;
-
-  ColorState(){
-
-  }
-
-  void changeColor(Color backgroundColor, Color appBarColor){
+  void changeColor(Cores backgroundColor, Cores appBarColor){
     _backgroundColor = backgroundColor;
     _appBarColor = appBarColor;
     notifyListeners();
   }
 
+  void changeCardColor(Cores cardColor){
+    _cardColor = cardColor;
+    notifyListeners();
+  }
 }

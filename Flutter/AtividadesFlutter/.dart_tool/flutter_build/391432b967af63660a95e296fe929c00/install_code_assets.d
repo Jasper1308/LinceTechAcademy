@@ -1,0 +1,1 @@
+ C:\\RepositorioAcademy\\Flutter\\AtividadesFlutter\\.dart_tool\\flutter_build\\391432b967af63660a95e296fe929c00\\native_assets.json: 

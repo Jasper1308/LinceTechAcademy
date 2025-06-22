@@ -1,0 +1,9 @@
+name: desafioDart
+description: Projeto CLI para análise de dados climáticos
+version: 1.0.0
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  yaansi: ^1.0.1

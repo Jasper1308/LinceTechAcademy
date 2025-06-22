@@ -1,0 +1,23 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "yaansi",
+      "rootUri": "file:///C:/Users/Adria/AppData/Local/Pub/Cache/hosted/pub.dev/yaansi-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "desafioDart",
+      "rootUri": "../",
+      "packageUri": "lib/",
+      "languageVersion": "3.7"
+    }
+  ],
+  "generated": "2025-04-21T07:32:14.513852Z",
+  "generator": "pub",
+  "generatorVersion": "3.7.2",
+  "flutterRoot": "file:///C:/src/flutter",
+  "flutterVersion": "3.29.2",
+  "pubCache": "file:///C:/Users/Adria/AppData/Local/Pub/Cache"
+}

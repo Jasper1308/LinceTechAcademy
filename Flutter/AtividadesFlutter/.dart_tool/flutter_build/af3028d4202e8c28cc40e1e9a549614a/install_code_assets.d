@@ -1,0 +1,1 @@
+ C:\\Flutter\\apf1_funcoes\\.dart_tool\\flutter_build\\af3028d4202e8c28cc40e1e9a549614a\\native_assets.json: 

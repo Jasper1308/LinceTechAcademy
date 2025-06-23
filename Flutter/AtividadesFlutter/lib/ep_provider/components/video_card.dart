@@ -16,7 +16,7 @@ class VideoCard extends StatefulWidget {
 class _VideoCardState extends State<VideoCard> {
   @override
   Widget build(BuildContext context) {
-    final colorState = Provider.of<ColorState>(context, listen: false);
+    final colorState = Provider.of<ColorState>(context);
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Card(
@@ -25,8 +25,8 @@ class _VideoCardState extends State<VideoCard> {
           children: [
             Image(
               image: NetworkImage(widget.video.thumbnail),
-              height: 300.0,
-              width: 400.0,
+              height: 200,
+              width: double.infinity,
             ),
             Text(
               widget.video.title,

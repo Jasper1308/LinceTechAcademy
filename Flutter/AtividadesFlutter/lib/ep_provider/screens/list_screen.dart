@@ -14,11 +14,9 @@ class ListVideos extends StatefulWidget {
 }
 
 class _ListVideosState extends State<ListVideos> {
-
-
   @override
   Widget build(BuildContext context) {
-    final colorState = Provider.of<ColorState>(context, listen: false);
+    final colorState = Provider.of<ColorState>(context);
     return Scaffold(
       backgroundColor: colorState.backgroundColor.color,
       appBar: AppBar(

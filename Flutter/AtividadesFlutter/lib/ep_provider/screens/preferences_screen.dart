@@ -60,7 +60,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                     )).toList(),
                     onChanged: (value) {
                       if(value != null){
-                        colorState.changeColor(colorState.backgroundColor, value);
+                        colorState.changeAppBarColor(value);
                       }
                     },
                   ),
@@ -89,7 +89,7 @@ class _PreferencesScreenState extends State<PreferencesScreen> {
                       )).toList(),
                     onChanged: (value) {
                       if(value != null){
-                        colorState.changeColor(value, colorState.appBarColor);
+                        colorState.changeBackgroundColor(value);
                       }
                     },
                   ),
